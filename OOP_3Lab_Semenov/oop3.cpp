@@ -1,9 +1,6 @@
-﻿
 #include <iostream>
 #include <vector>
-
 using namespace std;
-
 class object {// класс-родитель для всех объектов в папке
 public:
     object() {
