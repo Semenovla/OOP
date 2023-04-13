@@ -1,9 +1,10 @@
-﻿#include <iostream>
+﻿
+#include <iostream>
 #include <vector>
 
 using namespace std;
 
-class object {
+class object {// класс-родитель для всех объектов в папке
 public:
     object() {
         cout << "Конструктор по умолчанию класса object" << endl;
@@ -16,30 +17,32 @@ public:
         cout << "yooou Object" << endl;
     }
 };
-
+// класс папки
 class folder {
 public:
-    object** objects;
-    int folder_size;
+    object** objects;// массив указателей на объекты
+    int folder_size;// размер папки
 
-private:
+private:// увеличение размера массива объектов в папке
     void increase_array(object** old_objects, int array_size, int new_array_size) {
-
+        // создаем новый массив нужного размера
         object** new_objects = new object * [new_array_size];
-
+        // копируем элементы из старого массива в новый
         for (int i = 0; i < new_array_size; i++)
             if (i < array_size)
                 new_objects[i] = old_objects[i];
             else
                 new_objects[i] = nullptr;
-
+        // обновляем размер папки и массив объектов в ней
         this->folder_size = new_array_size;
         this->objects = new_objects;
+        // освобождаем память старого массива
         delete[] old_objects;
     }
-public:
+public:// конструктор папки
     folder(int folder_size) {
         cout << "Конструктор по умолчанию класса folder" << endl;
+        // инициализируем массив указателей на объекты в папке
         this->folder_size = folder_size;
         objects = new object * [folder_size];
 
@@ -47,7 +50,7 @@ public:
             objects[i] = nullptr;
         }
     }
-
+    // проверка наличия объекта в папке по индексу
     bool check_by_index(int index) {
         if (index < folder_size) {
             if (objects[index] == nullptr) {
@@ -61,14 +64,15 @@ public:
             return false;
         }
     }
-
+    // добавление объекта в папку по индексу
     void set_object(int index, object* something) {
         if (index >= this->folder_size) {
+            // если индекс больше размера папки, увеличиваем размер массива объектов в папке
             increase_array(objects, folder_size, index + 1);
             objects[index] = something;
         }
         else
-        {
+        {// если объект уже есть по данному индексу, добавляем новый объект в следующую свободную ячейку
             bool checker;
             checker = check_by_index(index);
 
@@ -79,7 +83,7 @@ public:
         }
     }
 
-
+    // добавление объекта в папку (в следующую свободную ячейку)
     void add_object(object* something) {
         bool mesto = false;
         for (int i = 0; i < folder_size; i++) {
@@ -95,20 +99,27 @@ public:
         }
     }
 
-
+    // Функция для получения объекта по индексу
+// Возвращает указатель на объект, если он существует, иначе возвращает nullptr
+// Принимает индекс в качестве параметра
     object* get_object(int index) {
         if (check_by_index(index) == true)
             return objects[index];
         else
             return nullptr;
     }
-
+    // Функция для удаления объекта по индексу
+// Если объект существует, то он удаляется и устанавливается указатель на nullptr
+// Иначе функция ничего не делает
+// Принимает индекс в качестве параметра
     void delete_object(int index) {
         if (check_by_index(index) == true)
             objects[index] = nullptr;
         else
             return;
     }
+    // Функция для получения первого объекта
+// Возвращает указатель на первый объект, если он существует, иначе возвращает nullptr
 
     object* get_first_object() {
         if (check_by_index(0) == true)
@@ -116,6 +127,8 @@ public:
         else
             return nullptr;
     }
+    // Функция для получения последнего объекта
+// Возвращает указатель на последний объект, если он существует, иначе возвращает nullptr
     object* get_last_object() {
         if (check_by_index(folder_size - 1) == true)
             return objects[folder_size - 1];
@@ -123,7 +136,7 @@ public:
             return nullptr;
     }
 
-    void show() {
+    void show() {//перебирает все объекты в папке, и для каждого, если он существует, вызывает метод "name_yourself" для отображения информации об объекте.
         for (int i = 0; i < folder_size; i++) {
             if (check_by_index(i) == true) {
                 object* something = get_object(i);
@@ -137,21 +150,21 @@ public:
     }
 };
 
-class Animal : public object {
+class Animal : public object {//бстрактным базовым классом, определяющим общие методы и свойства для всех животных
 public:
     Animal() {
         cout << "Конструктор по умолчанию абстрактного класса Animal" << endl;
     }
-    void sound() {
+    void sound() {//пределяет звук, который издает животное
         printf("\n");
     }
-    virtual void name_yourself() {
+    virtual void name_yourself() {//выводит информацию о том, что это за животное.
         cout << "yooou Animal" << endl;
     }
 
 };
 
-class Cat : public Animal {
+class Cat : public Animal {//наследуется от класса "Animal" и добавляет дополнительные свойства и методы, связанные с кошками, такие как цвет шерсти и порода. 
 protected:
     string coat_color;
     string breed;
@@ -166,11 +179,11 @@ public:
     void sound() {
         printf("Mew−mew␣\n");
     }
-    void catchMouse() {
+    void catchMouse() {//выводит информацию о том, что кошка ловит мышей
         cout << "``` Звуки охоты кошки ```" << endl;
     }
 
-    void name_yourself() {
+    void name_yourself() {//выводит информацию о том, что это кошка
         cout << "I am is a cat" << endl;
     }
     ~Cat() {
@@ -242,13 +255,13 @@ public:
 };
 
 
-int main() 
+int main()
 {
     setlocale(LC_ALL, "rus");
 
-    int folder_size = 1;
+    int folder_size = 1; // Создаем объект класса folder размером 1
     folder objects(folder_size);
-
+    // Создаем несколько объектов разных классов и добавляем их в объект folder
     object* object_1 = new Cat("White", "British");
     object* object_2 = new Dog("Black", "Bulderer");
     object* object_3 = new Dog();
@@ -259,27 +272,28 @@ int main()
     objects.set_object(1, object_2);
     objects.set_object(2, object_3);
     objects.set_object(3, object_5);
-
+    // Получаем объект с индексом 1 и вызываем метод name_yourself()
     object* something_1 = objects.get_object(1);
     (*something_1).name_yourself();
-
+    // Получаем первый объект в списке и вызываем метод name_yourself()
     object* something_2 = objects.get_first_object();
     (*something_2).name_yourself();
-
+    // Получаем последний объект в списке и вызываем метод name_yourself()
     object* something_3 = objects.get_last_object();
     (*something_3).name_yourself();
 
-
+    // Добавляем новый объект object_4 в объект folder
     objects.add_object(object_4);
+    // Создаем несколько объектов разных классов в цикле и добавляем/удаляем их из объекта folder
 
-    int range_size = 10000;
+    int range_size = 1000;
 
 
     for (int i = 4; i < range_size; i++) {
         int random_number = (rand() % range_size + 1);
 
         cout << "RANDOM NUMBER IS " << random_number << endl;
-
+        // Проверяем остаток от деления на несколько чисел и в зависимости от этого добавляем/удаляем объект или выводим информацию о нем
         if (random_number % 2 == 0) {
 
             object* something = new Cat("White", "British");
@@ -322,9 +336,6 @@ int main()
                 cout << random_number << endl;
                 (*something).name_yourself();
 
-                // не nullptr
-                // не выход за пределы
-                // что это
                 cout << "Check point 4 " << endl;
             }
             else {
