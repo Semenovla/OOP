@@ -1,0 +1,11 @@
+C:\Users\leva\Desktop\lab-4-part-2\Laba-4-2-OOP\bin\Debug\Laba-4-2-OOP.exe.config
+C:\Users\leva\Desktop\lab-4-part-2\Laba-4-2-OOP\bin\Debug\Laba-4-2-OOP.exe
+C:\Users\leva\Desktop\lab-4-part-2\Laba-4-2-OOP\bin\Debug\Laba-4-2-OOP.pdb
+C:\Users\leva\Desktop\lab-4-part-2\Laba-4-2-OOP\obj\Debug\Laba-4-2-OOP.csproj.AssemblyReference.cache
+C:\Users\leva\Desktop\lab-4-part-2\Laba-4-2-OOP\obj\Debug\Laba-4-2-OOP.csproj.SuggestedBindingRedirects.cache
+C:\Users\leva\Desktop\lab-4-part-2\Laba-4-2-OOP\obj\Debug\Laba_4_2_OOP.Form1.resources
+C:\Users\leva\Desktop\lab-4-part-2\Laba-4-2-OOP\obj\Debug\Laba_4_2_OOP.Properties.Resources.resources
+C:\Users\leva\Desktop\lab-4-part-2\Laba-4-2-OOP\obj\Debug\Laba-4-2-OOP.csproj.GenerateResource.cache
+C:\Users\leva\Desktop\lab-4-part-2\Laba-4-2-OOP\obj\Debug\Laba-4-2-OOP.csproj.CoreCompileInputs.cache
+C:\Users\leva\Desktop\lab-4-part-2\Laba-4-2-OOP\obj\Debug\Laba-4-2-OOP.exe
+C:\Users\leva\Desktop\lab-4-part-2\Laba-4-2-OOP\obj\Debug\Laba-4-2-OOP.pdb
