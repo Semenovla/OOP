@@ -1,0 +1,11 @@
+C:\Users\leva\Desktop\ООП\Ceменов Л.А\OOP-laba4-master\OOP-laba4\bin\Release\OOP-laba4.exe.config
+C:\Users\leva\Desktop\ООП\Ceменов Л.А\OOP-laba4-master\OOP-laba4\bin\Release\OOP-laba4.exe
+C:\Users\leva\Desktop\ООП\Ceменов Л.А\OOP-laba4-master\OOP-laba4\bin\Release\OOP-laba4.pdb
+C:\Users\leva\Desktop\ООП\Ceменов Л.А\OOP-laba4-master\OOP-laba4\obj\Release\OOP-laba4.csproj.AssemblyReference.cache
+C:\Users\leva\Desktop\ООП\Ceменов Л.А\OOP-laba4-master\OOP-laba4\obj\Release\OOP-laba4.csproj.SuggestedBindingRedirects.cache
+C:\Users\leva\Desktop\ООП\Ceменов Л.А\OOP-laba4-master\OOP-laba4\obj\Release\OOP_laba4.MainForm.resources
+C:\Users\leva\Desktop\ООП\Ceменов Л.А\OOP-laba4-master\OOP-laba4\obj\Release\OOP_laba4.Properties.Resources.resources
+C:\Users\leva\Desktop\ООП\Ceменов Л.А\OOP-laba4-master\OOP-laba4\obj\Release\OOP-laba4.csproj.GenerateResource.cache
+C:\Users\leva\Desktop\ООП\Ceменов Л.А\OOP-laba4-master\OOP-laba4\obj\Release\OOP-laba4.csproj.CoreCompileInputs.cache
+C:\Users\leva\Desktop\ООП\Ceменов Л.А\OOP-laba4-master\OOP-laba4\obj\Release\OOP-laba4.exe
+C:\Users\leva\Desktop\ООП\Ceменов Л.А\OOP-laba4-master\OOP-laba4\obj\Release\OOP-laba4.pdb
